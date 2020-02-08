@@ -1,5 +1,6 @@
 import http.server
 import socketserver
+import os
 from query import chat
 
 
