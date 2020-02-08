@@ -11,6 +11,11 @@ class Handler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
+    def do_GET(self):
+        self.send_response(200)
+        self.end_headers()
+        self.wfile.write(b'Hello, world!')
+    
     def do_POST(self):
         self.send_response(200)
         content_length = int(self.headers['Content-Length'])
