@@ -3,7 +3,7 @@ import socketserver
 from query import chat
 
 
-PORT = 8080
+PORT = int(os.environ.get("PORT", 5000))
 DIRECTORY = 'public'
 
 class Handler(http.server.SimpleHTTPRequestHandler):
